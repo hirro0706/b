@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+class shape {
+public:
+ double height;
+ double width;
+ shape();
+};
+class sankaku : public shape {
+public:
+ double menseki();
+ sankaku(double x, double y);
+};
+class shikaku : public shape {
+public:
+ double menseki();
+ shikaku(double x, double y);
+};
+
+shape::shape() {
+ height = 0;
+ width = 0;
+}
+
+
+sankaku::sankaku(double x, double y) {
+ width = x;
+ height = y;
+ 
+}
+shikaku::shikaku(double x, double y) {
+ width = x;
+ height = y;
+ 
+}
+double sankaku::menseki() {
+ return height * width*0.5;
+}
+double shikaku::menseki() {
+ return width  * height;
+}
+int main() {
+ sankaku a(10, 5);
+ shikaku b(10, 8);
+ cout << a.menseki() << "三角形　\n";
+ cout << b.menseki() << "四角形　\n";
+ return 0;
+}
